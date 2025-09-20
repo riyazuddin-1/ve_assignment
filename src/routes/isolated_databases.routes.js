@@ -11,7 +11,7 @@ router.post('/update', authorizeByRole('ADMIN'), isolatedDatabaseController.upda
 
 router.post('/delete', authorizeByRole('ADMIN'), authorizeByOwnership('isolated_database'), isolatedDatabaseController.removeIsolatedDB);
 
-router.get('/view/:dbId', isolatedDatabaseController.getIsolatedDBInfo);
+router.post('/view/:dbId', isolatedDatabaseController.getIsolatedDBInfo);
 
 // Isolated database records handling
 router.use('/records', isolatedDBRecordRoutes);

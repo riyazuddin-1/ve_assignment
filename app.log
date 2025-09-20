@@ -651,3 +651,23 @@
 2025-09-20T12:26:47.506Z [INFO]: [Database] MongoDB connection closed due to app termination (SIGINT)
 2025-09-20T12:26:51.622Z [INFO]: [APP] App listening on port 3333
 2025-09-20T12:26:51.625Z [INFO]: [GraphQL] 🚀 Server ready at http://localhost:4000/
+2025-09-20T12:43:34.915Z [INFO]: [APP] App listening on port 3333
+2025-09-20T12:43:34.918Z [INFO]: [GraphQL] 🚀 Server ready at http://localhost:4000/
+2025-09-20T12:43:50.865Z [ERROR]: [Membership Authorization] TypeError: Cannot read properties of undefined (reading 'tenant_id')
+    at authorizeByMembership (file:///Users/vijayeesam/Documents/code/assignment/src/middlewares/authorize.middleware.js:63:58)
+    at Layer.handleRequest (/Users/vijayeesam/Documents/code/assignment/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/Users/vijayeesam/Documents/code/assignment/node_modules/router/index.js:342:13)
+    at /Users/vijayeesam/Documents/code/assignment/node_modules/router/index.js:297:9
+    at processParams (/Users/vijayeesam/Documents/code/assignment/node_modules/router/index.js:582:12)
+    at next (/Users/vijayeesam/Documents/code/assignment/node_modules/router/index.js:291:5)
+    at Function.handle (/Users/vijayeesam/Documents/code/assignment/node_modules/router/index.js:186:3)
+    at router (/Users/vijayeesam/Documents/code/assignment/node_modules/router/index.js:60:12)
+    at Layer.handleRequest (/Users/vijayeesam/Documents/code/assignment/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/Users/vijayeesam/Documents/code/assignment/node_modules/router/index.js:342:13)
+2025-09-20T12:44:28.473Z [ERROR]: [Fetching tenant info] Error: Bad "options.expiresIn" option the payload already has an "exp" property.
+    at module.exports [as sign] (/Users/vijayeesam/Documents/code/assignment/node_modules/jsonwebtoken/sign.js:163:20)
+    at Object.create (file:///Users/vijayeesam/Documents/code/assignment/src/services/jwt.service.js:10:20)
+    at TenantService.getInfo (file:///Users/vijayeesam/Documents/code/assignment/src/services/tenants.service.js:72:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getTenantInfo (file:///Users/vijayeesam/Documents/code/assignment/src/controllers/tenants.controller.js:45:28)
+2025-09-20T12:46:25.536Z [INFO]: [Database] MongoDB connection closed due to app termination (SIGINT)
