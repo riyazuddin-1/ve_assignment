@@ -51,7 +51,8 @@ class TenantController {
 
             res.status(200).json({
                 message: "Fetched tenant information successfully.",
-                data: tenant
+                data: tenant.data,
+                token: tenant.token
             });
         } catch (err) {
             logError(err, 'Fetching tenant info');

@@ -60,7 +60,7 @@ export async function authorizeByMembership(req, res, next) {
             return res.status(401).send("Unauthorized: " + unpacked.content.message);
         }
         const userId = unpacked.content.user_id;
-        const tenantId = req.params.tenantId || req.body.tenant_id || req.query.tenant_id || unpacked.content.tenant_id;
+        const tenantId = unpacked.content.tenant_id || req.params.tenantId || req.body.tenant_id || req.query.tenant_id;
 
         if (!userId || !tenantId) {
             return res.status(400).send("Missing user ID or tenant ID. Try visiting workspace before accessing any of it's content.");

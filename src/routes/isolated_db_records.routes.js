@@ -14,6 +14,6 @@ router.post('/update', authorizeByRole('EDITOR') , isolatedDBRecordController.up
 
 router.post('/delete', authorizeByRole('EDITOR'), authorizeByOwnership('record'), isolatedDBRecordController.removeRecord);
 
-router.post('/read/:recordId', isolatedDBRecordController.readRecord);
+router.get('/read/:recordId', isolatedDBRecordController.readRecord);
 
 export default router;

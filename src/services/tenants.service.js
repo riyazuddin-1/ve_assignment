@@ -69,9 +69,19 @@ class TenantService {
 
         const databases = await IsolatedDatabase.find({ tenant_id: tenantId }).limit(limit).skip((page - 1) * limit).lean();
 
+        const token = Token.create({
+            user_id: user.user_id,
+            email: user.email,
+            tenant_id: tenantId,
+            role: user.role || tenant.users.find(user => user.user_id === user.user_id).role
+        });
+
         return {
-            ...tenant,
-            databases
+            data: {
+                ...tenant,
+                databases
+            },
+            token
         };
     }
 
